@@ -318,6 +318,10 @@ MIT
 MIT
 MIT
 
+@angular/animations@6.1.7
+MIT
+MIT
+
 @angular/core@6.1.7
 MIT
 MIT
