@@ -3,7 +3,7 @@
 
 <h2>Welcome to Dunder-Miffling</h2>
 <!-- <br> -->
-<h3 [hidden]="hideLoginFailed">Email Not Found</h3>
+<h3 [hidden]="hideLoginFailed">{{errorMessage}}</h3>
 <h5>Please enter your Email to view your posts and comments</h5>
 <form #myForm="ngForm" (ngSubmit)="login()">
   <table class="center">
@@ -15,7 +15,7 @@
     </mat-form-field>
   </table>
   <div>
-      <button mat-flat-button color="primary" [disabled] = "loginButtonDisabled" (click)="close()">Login</button>
+      <button mat-flat-button color="primary" [disabled] = "loginButtonDisabled">Login</button>
   </div>
 </form>  
 
