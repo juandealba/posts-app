@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsAppService } from '../../common/posts-app.service';
 import { UserService } from '../../common/user.service';
-import { User } from '../../common/data-model';
+import { User, Post } from '../../common/data-model';
 
 @Component({
   selector: 'app-profile-view',
@@ -10,11 +11,20 @@ import { User } from '../../common/data-model';
 export class ProfileViewComponent implements OnInit {
 
   user:User;
-  
-  constructor(private userService:UserService) { }
+  posts:Post[];
+
+  constructor(private postAppService: PostsAppService, private userService:UserService) { }
 
   ngOnInit() {
     this.user = this.userService.user; 
+    this.postAppService.searchPostsByUserId(this.user.id).subscribe(
+      data => {
+        this.posts = data;
+      },
+      err => {
+
+      }
+    )
   }
 
 }
