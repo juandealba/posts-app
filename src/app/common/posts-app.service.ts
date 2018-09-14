@@ -21,12 +21,12 @@ export class PostsAppService {
   }
 
   searchPostsByUserId(id:number): Observable<Post[]>{
-    let url = this.POSTS + '/?id=' + id;
+    let url = this.POSTS + '/?userId=' + id;
     return this.http.get<Post[]>(url);
   }
 
   searchCommentsByPostId(id:number): Observable<Comment[]>{
-    let url = this.COMMENTS + '/?id=' + id;
+    let url = this.COMMENTS + '/?postId=' + id;
     return this.http.get<Comment[]>(url);
   }
 }
