@@ -6,6 +6,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PostsAppService } from './common/posts-app.service';
 import { UserService } from './common/user.service';
+import { 
+  MatButtonModule, 
+  MatIconModule, 
+  MatMenuModule,
+  MatToolbarModule,
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -15,7 +21,11 @@ import { UserService } from './common/user.service';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule, 
+    MatIconModule, 
+    MatMenuModule,
+    MatToolbarModule,
   ],
   providers: [PostsAppService, UserService],
   bootstrap: [AppComponent]

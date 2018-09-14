@@ -5,10 +5,12 @@ import { PostsComponent } from './posts/posts.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 import {MatGridListModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatExpansionModule} from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
+    FlexLayoutModule,
     ProfileRoutingModule,
     MatExpansionModule,
     MatGridListModule,

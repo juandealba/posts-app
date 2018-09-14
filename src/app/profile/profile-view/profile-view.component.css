@@ -1,10 +1,26 @@
-.blue1{
-    background: blue;
-}
 
-.red1{
-    background: red;
-}
-
-
+.bounds {
+    background-color:#ddd;
+    height :auto;
+  }
   
+  .desc {
+    color:white;
+    /* padding: 5vh; */
+  }
+  
+  .posts {
+    color:blue;
+    /* padding: 5vh; */
+  }
+  
+  .desc, .posts {
+    /* padding-top:20px; */
+    padding: 2vh;
+    text-align:center
+  }
+  
+  .content {
+    min-width: 300px;
+    /*height: 400px;*/
+  }
