@@ -28,7 +28,8 @@ export class ProfileViewComponent implements OnInit {
       data => {
         this.posts = data;
         this.doFork();
-        
+        this.user.posts = this.posts;
+        this.userService.emmitPostFullyLoaded(this.user)
       },
       err => {
 

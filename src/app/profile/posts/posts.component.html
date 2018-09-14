@@ -1,10 +1,32 @@
 <mat-card class="mat-elevation-z24">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>First Last Posts</mat-card-title>
+    <div mat-card-avatar></div>
+    <mat-card-title>Posts</mat-card-title>
   </mat-card-header>
   <mat-card-content>
 
+    <mat-accordion class="example-headers-align" *ngFor="let post of posts">                    
+      <mat-expansion-panel #matExpansionPanel hideToggle="false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{post.title}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        {{post.body}}
+        <br>
+        <mat-accordion class="example-headers-align" *ngFor="let comment of post.comments">                    
+          <mat-expansion-panel #matExpansionPanel hideToggle="false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{comment.name}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            {{comment.body}}
+          </mat-expansion-panel>                                      
+      </mat-accordion> 
+
+      </mat-expansion-panel>                                      
+  </mat-accordion> 
 
   </mat-card-content>
 </mat-card>
