@@ -10,11 +10,13 @@ import { UserService } from '../../common/user.service';
 export class PostsComponent implements OnInit {
 
   posts:Post[];
+  postsBy:string;
 
   constructor(private userService:UserService) { 
     userService.postFullyLoaded$.subscribe(
       data => { 
         this.posts = data.posts
+        this.postsBy = userService.user.name;
       }),
       err => console.error(err)
   }

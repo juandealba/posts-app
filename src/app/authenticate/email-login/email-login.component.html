@@ -3,12 +3,12 @@
 
 <h2>Welcome to Dunder-Miffling</h2>
 <!-- <br> -->
-<h3 [hidden]="hideLoginFailed">{{errorMessage}}</h3>
+<h3 [hidden]="hideLoginFailed" class='warn'>{{errorMessage}}</h3>
 <h5>Please enter your Email to view your posts and comments</h5>
 <form #myForm="ngForm" (ngSubmit)="login()">
   <table class="center">
     <mat-form-field class="input-full-width">
-      <input matInput placeholder="Email" [formControl]="loginEmailFormControl" name="aa" (keyup)="validateLoginForm()">
+      <input matInput placeholder="Email" [formControl]="loginEmailFormControl" name="aa" (keyup)="validateLoginForm()" (paste)="validateSearchOnPaste($event)">
       <mat-error *ngIf="loginEmailFormControl.hasError('email')">
         Invalid Email
       </mat-error>

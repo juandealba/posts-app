@@ -1,3 +1,12 @@
 .mat-card{
-
+    text-align: left;
 }
+
+/* .mat-icon{
+    padding-top: 53px
+} */
+
+.material-icons {
+    vertical-align: middle !important;
+    padding-bottom: 3px;
+  }

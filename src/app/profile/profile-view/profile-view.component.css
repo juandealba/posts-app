@@ -1,7 +1,7 @@
 
 .bounds {
     background-color:#ddd;
-    height :auto;
+    min-height :90vh;
   }
   
   .desc {

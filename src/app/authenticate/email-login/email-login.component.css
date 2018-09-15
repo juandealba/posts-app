@@ -4,3 +4,7 @@
 	max-width: 1000px;
 	float: none;
 }
+
+.warn{
+    color: red
+}

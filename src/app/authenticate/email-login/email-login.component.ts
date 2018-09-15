@@ -45,6 +45,7 @@ export class EmailLoginComponent implements OnInit {
         if(data != null && data[0] != null){
           this.user = data[0];
           this.router.navigateByUrl('/profile')
+          this.userService.emmitLogin(this.user)
         }
         else{
           this.hideLoginFailed = false;
@@ -56,6 +57,16 @@ export class EmailLoginComponent implements OnInit {
         this.errorMessage = 'Something went wrong. Please try again later';
       }
     )
+  }
+
+  validateSearchOnPaste(event){
+    let text = event.clipboardData.getData('Text') //Gets the text pasted from clipboard
+
+    if(text != ''){
+      this.loginButtonDisabled = false;
+    }
+    else
+      this.loginButtonDisabled = true;
   }
 
 }

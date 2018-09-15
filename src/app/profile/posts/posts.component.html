@@ -1,7 +1,9 @@
 <mat-card class="mat-elevation-z24">
   <mat-card-header>
     <div mat-card-avatar></div>
-    <mat-card-title>Posts</mat-card-title>
+    <mat-card-title>
+        <h1>Posts by {{postsBy}}</h1>
+      </mat-card-title>
   </mat-card-header>
   <mat-card-content>
 
@@ -9,7 +11,7 @@
       <mat-expansion-panel #matExpansionPanel hideToggle="false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            {{post.title}}
+              <h4>{{post.title}}</h4>
           </mat-panel-title>
         </mat-expansion-panel-header>
         {{post.body}}
@@ -18,7 +20,7 @@
           <mat-expansion-panel #matExpansionPanel hideToggle="false">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                {{comment.name}}
+                  <h4>{{comment.name}}</h4>
               </mat-panel-title>
             </mat-expansion-panel-header>
             {{comment.body}}
