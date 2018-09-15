@@ -20,7 +20,7 @@ export class EmailLoginComponent implements OnInit {
   );
   user:User;
 
-  constructor(private postAppService: PostsAppService, private router:Router, private userService:UserService) { }
+  constructor(public postAppService: PostsAppService, public router:Router, public userService:UserService) { }
 
   ngOnInit() {
   }

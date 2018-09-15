@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Posts';
   hideMenu = true;
 
-  constructor(private userService: UserService, private router:Router) {
+  constructor(private userService: UserService, public router:Router) {
     userService.login$.subscribe(
       data => { 
         this.hideMenu = false
