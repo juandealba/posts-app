@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
   <span class="fill-remaining-space">
     <div [hidden]="hideMenu">
-    <button id= "hamburger" mat-icon-button [matMenuTriggerFor]="menu">
+    <button id= "hamburger" mat-icon-button [matMenuTriggerFor]="menu" name="hamButton">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item (click)="onLogout()">
+      <button mat-menu-item (click)="onLogout()" name="outButton">
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
       </button>

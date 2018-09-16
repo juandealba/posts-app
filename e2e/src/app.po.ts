@@ -5,7 +5,18 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  navigateToLogin() {
+    return browser.get('/authenticate');
+  }
+
+  navigateToProfile() {
+    return browser.get('/profile');
+  }
+  getTitleText() {
+    return element(by.id('#postTitle')).getText();
+  }
+
+  getUrl(){
+    return browser.getCurrentUrl();
   }
 }
