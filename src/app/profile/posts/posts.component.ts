@@ -12,7 +12,7 @@ export class PostsComponent implements OnInit {
   posts:Post[];
   postsBy:string;
 
-  constructor(private userService:UserService) { 
+  constructor(public userService:UserService) { 
     userService.postFullyLoaded$.subscribe(
       data => { 
         this.posts = data.posts

@@ -10,7 +10,18 @@ export interface User {
     posts:Post[];
 }
 
-export interface Address {
+export class TestUser implements User{
+    id: number;  name: string;
+    username: string;
+    email: string;
+    address: Address;
+    phone: string;
+    website: string;
+    company: Company;
+    posts: Post[];
+  }
+
+export class Address {
     street:string;
     suite:string;
     city:string;
@@ -18,7 +29,7 @@ export interface Address {
     geo:Geo;
 }
 
-export interface Company {
+export class Company {
     name:string;
     catchPhrase:string;
     bs:string;
@@ -29,7 +40,7 @@ export interface Geo {
     lng:string;
 }
 
-export interface Post{
+export class Post{
     userId:number;
     id:number;
     title:string;

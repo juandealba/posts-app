@@ -12,6 +12,10 @@ export class UserService {
   logout$ = this.logout.asObservable();
   postFullyLoaded$ = this.postFullyLoaded.asObservable();
 
+  get theUser(): User {
+    return this.user;
+}
+
   emmitLogin(user: User) {
     this.login.next(user);
   }

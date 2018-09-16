@@ -4,7 +4,6 @@ import { UserService } from '../../common/user.service';
 import { User, Post } from '../../common/data-model';
 import { Router } from '@angular/router';
 import { Observable, forkJoin, of, interval } from 'rxjs';
-//import 'rxjs/add/observable/forkJoin'
 
 @Component({
   selector: 'app-profile-view',
@@ -16,23 +15,25 @@ export class ProfileViewComponent implements OnInit {
   user:User;
   posts:Post[];
 
-  constructor(private postAppService: PostsAppService, private router:Router, private userService:UserService) {
-    if(userService.user == null){
-      router.navigateByUrl('/authenticate')
-    }
+  constructor(public postAppService: PostsAppService, public router:Router, public userService:UserService) {
+    this.onCreation();
    }
 
+  
+  onCreation(){
+    if(this.userService.theUser == null){
+      this.router.navigateByUrl('/authenticate')
+    }
+  }
+
   ngOnInit() {
-    this.user = this.userService.user; 
+    this.user = this.userService.theUser; 
     this.postAppService.searchPostsByUserId(this.user.id).subscribe(
       data => {
         this.posts = data;
         this.doFork();
         this.user.posts = this.posts;
         this.userService.emmitPostFullyLoaded(this.user)
-      },
-      err => {
-
       }
     )
   }
